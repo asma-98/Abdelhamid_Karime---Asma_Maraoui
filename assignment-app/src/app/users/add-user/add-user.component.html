@@ -1,0 +1,80 @@
+<app-nav>
+  <form (ngSubmit) = "onSubmit()">
+  <div class="center-div">
+  <mat-horizontal-stepper  labelPosition="bottom" #stepper class="f" >
+    <mat-step>
+      <ng-template matStepLabel>Info-1</ng-template>
+      <div class="float-div">
+          <mat-form-field>
+            <mat-label>Nom</mat-label>
+            <input matInput  placeholder="nom"  type="text"
+            name = "nom"
+            [(ngModel)] = "user.nom" required />
+          </mat-form-field>
+          </div>
+          <div class="float-div">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput  placeholder="email"  type="text"
+              name = "title"
+              [(ngModel)] = "user.email" required />
+            </mat-form-field>
+            </div>
+            <div class="float-div">
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput  placeholder="password"  type="password"
+                name = "title"
+                [(ngModel)] = "user.password" required />
+              </mat-form-field>
+              </div>
+
+            <div class="float-div d">
+            <button mat-button type="button"   mat-mini-fab color="primary" matStepperNext>Next</button>
+          </div>
+  </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Info-2</ng-template>
+              <div class="float-div">
+                  <input   placeholder="nom"  type="file"
+                  name = "image"
+                   (change)="selctFile($event)"required />
+                </div>
+                <div class="float-div">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Roles</mat-label>
+                  <select matNativeControl [ngModel]="role"   (ngModelChange)="disply($event)" [ngModelOptions]="{standalone: true}" >
+                    <option [ngValue]="null" disabled>Choose one</option>
+                    <option *ngFor="let role of roles" [ngValue]="role" style="color: black;">
+                      {{ role.role }}
+                    </option>
+                  </select>
+                </mat-form-field>
+              </div>
+                <div class="float-div d">
+                  <button mat-button  mat-mini-fab color="primary" matStepperPrevious>Back</button>
+                </div>
+          <div class="float-div d">
+            <button type="button"  mat-mini-fab color="primary" mat-button matStepperNext>Next</button>
+          </div>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <div>
+          <div class="float-div">
+          <button mat-button mat-mini-fab color="primary" matStepperPrevious>Back</button>
+        </div>
+        <div class="float-div">
+          <button type="button" mat-button mat-mini-fab color="primary" (click)="stepper.reset()">Reset</button>
+        </div>
+        </div>
+        <div class="btn-ajouter">
+          <button type="submit" mat-button mat-fab color="primary" (click)="openSnackBar('user ajouter !!', 'done')">Ajouter</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+    </div>
+    </form>
+</app-nav>

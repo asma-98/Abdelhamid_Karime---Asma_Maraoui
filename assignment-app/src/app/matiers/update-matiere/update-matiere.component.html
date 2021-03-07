@@ -1,0 +1,43 @@
+<app-nav>
+  <form (ngSubmit) = "onSubmit()">
+
+  <div class="center-div">
+  <mat-horizontal-stepper  labelPosition="bottom" #stepper class="f" >
+
+      <mat-step>
+          <div class="float-div">
+              <mat-form-field>
+                <mat-label>Titre Assignment</mat-label>
+                <input matInput  placeholder="nom"  type="text"
+                name = "title" [value]="matiere.lebele"
+                [(ngModel)] = "matiere.lebele" required />
+              </mat-form-field>
+              </div>
+              <div class="float-div">
+                  <input   placeholder="nom"  type="file"
+                  name = "image"
+                   (change)="selctFile($event)"required />
+                </div>
+          <div class="float-div d">
+            <button type="button"  mat-mini-fab color="primary" mat-button matStepperNext>Next</button>
+          </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <div>
+          <div class="float-div">
+          <button mat-button mat-mini-fab color="primary" matStepperPrevious>Back</button>
+        </div>
+        <div class="float-div">
+          <button type="button" mat-button mat-mini-fab color="primary" (click)="stepper.reset()">Reset</button>
+        </div>
+        </div>
+        <div class="btn-ajouter">
+          <button type="submit" mat-button mat-fab color="primary">Modifier</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+    </div>
+    </form>
+</app-nav>

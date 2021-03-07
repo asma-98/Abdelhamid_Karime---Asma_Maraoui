@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar >Assignments App</mat-toolbar>
+    <mat-nav-list>
+ <button    style="font-size: 16px; width:190px;height: 50px; text-align: left;" mat-button  [matMenuTriggerFor]="assignment"> Assignments </button>
+<mat-menu #assignment="matMenu">
+  <button mat-menu-item style="font-size: 16px; width:190px; text-align: left;" onclick="window.location.href='http://localhost:4200/listAssignment';" >Afficher Assignments</button>
+  <button *ngIf="role =='Prf'" mat-menu-item style="font-size: 16px; width:190px; text-align: left;" onclick="window.location.href='http://localhost:4200/addAssignment';"  >Ajouter Assignments</button>
+</mat-menu>
+
+<button *ngIf="role =='admine'" style="font-size: 16px; width:190px;height: 50px; text-align: left;" mat-button  [matMenuTriggerFor]="matiere"> matiers </button>
+<mat-menu #matiere="matMenu">
+  <button mat-menu-item style="font-size: 16px; width:190px; text-align: left;" onclick="window.location.href='http://localhost:4200/listMatiere';" >Afficher Matiers</button>
+  <button mat-menu-item style="font-size: 16px; width:190px; text-align: left;" onclick="window.location.href='http://localhost:4200/addMatiere';">Ajouter matiers</button>
+</mat-menu>
+<button  *ngIf="role =='admine'" style="font-size: 16px; width:190px;height: 50px; text-align: left;" mat-button  [matMenuTriggerFor]="user"> users </button>
+<mat-menu #user="matMenu">
+  <button mat-menu-item style="font-size: 16px; width:190px; text-align: left;" onclick="window.location.href='http://localhost:4200/listUser';" >Afficher users</button>
+  <button mat-menu-item style="font-size: 16px; width:190px; text-align: left;" onclick="window.location.href='http://localhost:4200/addUser';">Ajouter user</button>
+</mat-menu>
+    </mat-nav-list>
+</mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="position:relative" color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>assignment-app</span>
+      <button mat-button color="warn" style="float:left;margin: 80%;" (click)="logout()">Logout</button>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

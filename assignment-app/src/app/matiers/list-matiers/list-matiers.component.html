@@ -1,0 +1,39 @@
+<app-nav>
+  <div class="center-div">
+
+   <mat-tab-group dynamicHeight>
+
+
+       <mat-tab label="Matiere">
+        <!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport" #scroller> -->
+
+         <div class="example-large-box mat-elevation-z4"  *ngFor = "let matiere of matieres">
+          <!-- <mat-list *cdkVirtualFor="let matiere of matieres"> -->
+             <div class="d">
+           <mat-card class="example-card ">
+
+
+               <div class="image">
+               <img mat-card-image [src]='matiere.image.image' alt="Photo of a Shiba Inu">
+               </div>
+               <mat-card-title>{{matiere.lebele}}</mat-card-title>
+               <mat-card-content>
+               </mat-card-content>
+               <mat-card-actions>
+                 <button class="btn" (click) = "deleteMatiere(matiere._id)"  type="button" mat-button mat-fab color="warn" mat-button>Delete</button>
+                 <button type="submit" (click) = "updateMatiere(matiere._id)" mat-button mat-fab color="primary" mat-button>Update</button>
+
+               </mat-card-actions>
+             </mat-card>
+             </div>
+            <!-- </mat-list> -->
+         </div>
+        <!-- </cdk-virtual-scroll-viewport> -->
+       </mat-tab>
+
+
+
+     </mat-tab-group>
+
+   </div>
+</app-nav>

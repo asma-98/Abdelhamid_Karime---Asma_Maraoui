@@ -1,0 +1,35 @@
+.center-div{
+  padding:20px;
+  margin:20px;
+ background-color: #EDEDED;
+  font-size:18px;
+  color:black;
+}
+.example-card {
+  max-width: 300px;
+  max-height: 400px;
+}
+
+.example-header-image {
+
+  background-size: cover;
+}
+.d{
+    float: left ;
+    padding-left : 6px;
+    padding-top: 6px;
+}
+.affichage{
+  border: solid 1px black;
+
+  font-size:18px;
+  color:red;
+}
+.btn{
+  float: right;
+}
+.image{
+
+width:200px;
+height:100px;
+}

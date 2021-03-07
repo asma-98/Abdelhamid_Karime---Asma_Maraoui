@@ -1,0 +1,67 @@
+<app-nav>
+    <div class="center-div">
+     <mat-tab-group dynamicHeight>
+
+         <mat-tab label="Rendu" >
+           <div class="example-large-box mat-elevation-z4" *ngFor = "let rendu of assignmentsRendue">
+               <div class="d">
+             <mat-card class="example-card ">
+                    <div class="div-p image" style="float: left">
+                    <img mat-card-image [src]='rendu.matier.image.image' alt="Photo ">
+                    </div>
+                    <div class="div-p " style=" float: right; padding-left: 100px;">
+                    <img mat-card-image [src]='rendu.prof.image.image' alt="Photo">
+                    </div>
+
+                 <mat-card-content>
+                  <mat-card-title>
+                 Titre:{{rendu.nom}}<br/>
+                 Date De Rendu : {{rendu.dateDeRendu}}<br/>
+                 Etudiant : {{rendu.auteur}}<br/>
+                 Note /20 : {{rendu.note}}<br/>
+                 Remarques : {{rendu.auteur}}<br/>
+                  </mat-card-title>
+                 </mat-card-content>
+                 <mat-card-actions>
+                  <button class="btn" (click) = "deleteAssignment(rendu._id)"  type="button" mat-button mat-fab color="warn" mat-button>Delete</button>
+                  <button type="submit" (click) = "updateAssignment(rendu._id)" mat-button mat-fab color="primary" mat-button>Update</button>
+
+                </mat-card-actions>
+               </mat-card>
+               </div>
+           </div>
+         </mat-tab>
+
+         <mat-tab label=" Non Rendu" >
+          <div class="example-large-box mat-elevation-z4" *ngFor = "let rendu of assignmentsNonRendue">
+              <div class="d">
+            <mat-card class="example-card ">
+                   <div class="div-p image" style="float: left">
+                   <img mat-card-image [src]='rendu.matier.image.image' alt="Photo ">
+                   </div>
+                   <div class="div-p " style=" float: right; padding-left: 100px;">
+                   <img mat-card-image [src]='rendu.prof.image.image' alt="Photo">
+                   </div>
+
+                <mat-card-content>
+                 <mat-card-title>
+                Titre:{{rendu.nom}} <br/>
+                Date De Rendu : {{rendu.dateDeRendu}} <br/>
+                Etudiant : {{rendu.auteur}} <br/>
+                Note /20 : {{rendu.note}} <br/>
+                Remarques : {{rendu.auteur}} <br/>
+
+                 </mat-card-title>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button *ngIf="role =='Prf'" class="btn" (click) = "deleteAssignment(rendu._id)"  type="button" mat-button mat-fab color="warn" mat-button>Delete</button>
+                  <button *ngIf="role =='Prf'" type="submit" (click) = "updateAssignment(rendu._id)" mat-button mat-fab color="primary" mat-button>Update</button>
+                </mat-card-actions>
+              </mat-card>
+              </div>
+          </div>
+        </mat-tab>
+
+       </mat-tab-group>
+     </div>
+ </app-nav>

@@ -1,0 +1,31 @@
+<app-nav>
+  <div class="center-div">
+   <mat-tab-group dynamicHeight>
+
+       <mat-tab label="User">
+         <div class="example-large-box mat-elevation-z4"  *ngFor = "let user of users">
+             <div class="d">
+           <mat-card class="example-card ">
+
+
+               <div class="image">
+               <img mat-card-image [src]='user.image.image' alt="Photo of a Shiba Inu">
+               </div>
+                  <h5>Nom : {{user.nom}} </h5>
+                  <h5>Email: {{user.email}}</h5>
+
+               <mat-card-actions>
+                 <button class="btn" (click) = "deleteUser(user._id)"  type="button" mat-button mat-fab color="warn" mat-button>Delete</button>
+                 <button type="submit" (click) = "updateUser(user._id)" mat-button mat-fab color="primary" mat-button>Update</button>
+               </mat-card-actions>
+             </mat-card>
+             </div>
+         </div>
+
+       </mat-tab>
+
+
+
+     </mat-tab-group>
+   </div>
+</app-nav>

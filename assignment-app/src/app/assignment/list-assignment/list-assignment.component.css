@@ -1,0 +1,44 @@
+.center-div{
+    padding:20px;
+    margin:20px;
+   background-color: #EDEDED;
+    font-size:18px;
+
+}
+.example-card {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .example-header-image {
+
+    background-size: cover;
+  }
+  .d{
+      float: left ;
+      padding-left : 6px;
+      padding-top: 6px;
+  }
+  .affichage{
+    border: solid 1px black;
+
+    font-size:18px;
+    color:red;
+  }
+  .image{
+    width: 70px;
+
+
+
+  }
+
+  .div-p{
+    width: 70px;
+
+
+  }
+
+  .mat-card-title{
+    font-size: 18px;
+    width: 200px;
+  }

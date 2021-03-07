@@ -1,0 +1,84 @@
+<app-nav>
+  <form (ngSubmit) = "onSubmit()">
+  <div class="center-div">
+  <mat-horizontal-stepper  labelPosition="bottom" #stepper class="f" >
+    <mat-step>
+      <ng-template matStepLabel>Info</ng-template>
+      <div class="float-div">
+          <mat-form-field>
+            <mat-label>Nom</mat-label>
+            <input matInput  placeholder="nom"  type="text"
+            name = "nom"   [(ngModel)] = "assignment.nom"
+            [(ngModel)] = "assignment.nom" required />
+          </mat-form-field>
+          </div>
+          <div class="float-div">
+            <mat-form-field appearance="fill">
+              <mat-label> date Rendu</mat-label>
+              <input matInput [matDatepicker]="picker"[(ngModel)] = "assignment.dateDeRendu" name="dateDeRendu">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            </div>
+      <div class="float-div">
+        <mat-form-field appearance="fill">
+          <mat-label>Favorite Car</mat-label>
+        <select matNativeControl [ngModel]="matiere"   (ngModelChange)="disply($event)" [ngModelOptions]="{standalone: true}" >
+          <option [ngValue]="null" disabled>Choose your profile</option>
+          <option *ngFor="let matier of matieres" [ngValue]="matier" style="color: black;">
+            {{ matier.lebele }}
+          </option>
+        </select>
+      </mat-form-field>
+    </div>
+
+            <div class="float-div d">
+            <button mat-button type="button"   mat-mini-fab color="primary" matStepperNext>Next</button>
+          </div>
+  </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>image</ng-template>
+        <div class="float-div">
+        <mat-form-field>
+          <mat-label>Note/20</mat-label>
+          <input matInput  placeholder="note /20 "  type="text"
+          name = "note"   [(ngModel)] = "assignment.note"
+         required />
+        </mat-form-field>
+        </div>
+        <div class="float-div">
+          <mat-form-field>
+            <mat-label>Remarques</mat-label>
+            <input matInput  placeholder="Remarques "  type="text"
+            name = "remarques"   [(ngModel)] = "assignment.remarques"
+            [(ngModel)]="assignment.remarques" uired />
+          </mat-form-field>
+          </div>
+                <div class="float-div d">
+                  <button mat-button  mat-mini-fab color="primary" matStepperPrevious>Back</button>
+                </div>
+          <div class="float-div d">
+            <button type="button"  mat-mini-fab color="primary" mat-button matStepperNext>Next</button>
+          </div>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <div>
+          <div class="float-div">
+          <button mat-button mat-mini-fab color="primary" matStepperPrevious>Back</button>
+        </div>
+        <div class="float-div">
+          <button type="button" mat-button mat-mini-fab color="primary" (click)="stepper.reset()">Reset</button>
+        </div>
+        </div>
+        <div class="btn-ajouter">
+          <button (click)="openSnackBar('Assignment ajouter !!', 'done')" type="submit" mat-button mat-fab color="primary">Ajouter</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+    </div>
+    </form>
+</app-nav>

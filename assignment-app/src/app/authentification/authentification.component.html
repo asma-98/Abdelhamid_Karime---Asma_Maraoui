@@ -1,0 +1,26 @@
+
+<div class="center-content">
+  <form (ngSubmit)="onSubmit()">
+  <mat-card class="example-card">
+    <div style="text-align:center;">
+      <mat-card-title >Login</mat-card-title>
+    </div>
+
+    <mat-card-content>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input type="text" matInput placeholder="email" [(ngModel)]="user.email" name="email" />
+        </mat-form-field>
+         <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Password"  [(ngModel)] ="user.password" name="password"/>
+            <mat-icon matSuffix>vpn_key</mat-icon>
+          </mat-form-field>
+          <button  type="submit"  mat-button color="primary" >Login</button>
+    </mat-card-content>
+
+  </mat-card>
+</form>
+</div>
+

@@ -1,0 +1,43 @@
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.center-div{
+padding-top: 40px;
+width: 70%;
+padding-left: 15%;
+
+}
+
+.f{
+  background-color:#EDEDED;
+}
+
+.float-div{
+  float: left;
+  padding-left: 20px;
+
+}
+
+.d{
+  padding-top: 27px;
+  padding-left: 40px;
+
+}
+
+.width-textarea {
+  width: 500px;
+  padding-top: 8px;
+}
+
+.btn-ajouter{
+  float: right;
+  padding-right: 20px;
+}
+input[type="file"] {
+  z-index: -1;
+  padding-top: 40px;
+  left: 8px;
+  font-size: 17px;
+  color: #b8b8b8;
+}

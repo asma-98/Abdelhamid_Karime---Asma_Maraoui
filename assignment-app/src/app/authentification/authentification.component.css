@@ -1,0 +1,26 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+.center-content {
+    padding-top: 150px;
+    text-align: -webkit-center;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mat-button{
+  margin-top: 10px;
+width: 100%;
+color: white;
+height: 40px;
+background-color: #3F51B5;
+}
+

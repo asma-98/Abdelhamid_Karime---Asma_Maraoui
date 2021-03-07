@@ -1,0 +1,35 @@
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.center-div{
+  padding: 10px;
+
+
+}
+
+.f{
+  background-color:#EDEDED;
+}
+
+.float-div{
+  float: left;
+  padding-left: 20px;
+
+}
+
+.d{
+  padding-top: 27px;
+  padding-left: 40px;
+
+}
+
+.width-textarea {
+  width: 500px;
+  padding-top: 8px;
+}
+
+.btn-ajouter{
+  float: right;
+  padding-right: 20px;
+}
